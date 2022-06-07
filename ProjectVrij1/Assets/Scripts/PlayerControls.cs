@@ -25,6 +25,12 @@ public class PlayerControls : MonoBehaviour
                     //press button
                     interactable.PlaySound();
                 }
+
+                AnimationTrigger trigger = hit.collider.GetComponent<AnimationTrigger>();
+                if(trigger != null)
+                {
+                    trigger.pulledCable();
+                }
             }
         }
     }
