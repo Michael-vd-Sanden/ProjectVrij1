@@ -31,6 +31,12 @@ public class PlayerControls : MonoBehaviour
                 {
                     trigger.pulledCable();
                 }
+
+                CylinderRotation rotation = hit.collider.GetComponent<CylinderRotation>();
+                if (rotation != null)
+                {
+                    rotation.currentRoutine = StartCoroutine(rotation.RotateCylinder(20f, 0.09f, 5f));
+                }
             }
         }
     }
