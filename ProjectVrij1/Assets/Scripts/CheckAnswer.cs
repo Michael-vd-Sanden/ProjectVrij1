@@ -13,6 +13,8 @@ public class CheckAnswer : MonoBehaviour
     private bool note7 = false;
     private bool note8 = false;
 
+    public ParticleSystem particles;
+
     void Start()
     {
         
@@ -27,7 +29,14 @@ public class CheckAnswer : MonoBehaviour
     {
         switch (note)
         {
-            case "ToneD": if (note1 && note7) { note8 = true; Debug.Log("YOU DID IT"); };
+            case "ToneD": 
+                if (note1 && note7) 
+                { 
+                    note8 = true; 
+                    Debug.Log("YOU DID IT");
+                    particles.Play();
+                    SetAllToFalse();
+                };
                     if (!note1) {           //We beginnen opnieuw
                         SetAllToFalse(); 
                         note1 = true;
