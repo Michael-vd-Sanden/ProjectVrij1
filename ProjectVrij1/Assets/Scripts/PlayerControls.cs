@@ -25,6 +25,18 @@ public class PlayerControls : MonoBehaviour
                     //press button
                     interactable.PlaySound();
                 }
+
+                AnimationTrigger trigger = hit.collider.GetComponent<AnimationTrigger>();
+                if(trigger != null)
+                {
+                    trigger.pulledCable();
+                }
+
+                CylinderRotation rotation = hit.collider.GetComponent<CylinderRotation>();
+                if (rotation != null)
+                {
+                    rotation.currentRoutine = StartCoroutine(rotation.RotateCylinder(20f, 0.09f, 5f));
+                }
             }
         }
     }

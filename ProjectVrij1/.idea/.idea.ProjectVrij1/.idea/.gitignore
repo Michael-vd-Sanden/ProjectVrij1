@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.ProjectVrij1.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../:\Users\User\OneDrive\Documenten\HKU\projectvrij\ProjectVrij1\ProjectVrij1\.idea\.idea.ProjectVrij1\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
