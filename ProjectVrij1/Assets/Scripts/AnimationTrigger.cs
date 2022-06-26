@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
-    Animator triggerAnimator;
+    public Animator triggerAnimator;
     public Animator ballAnimator;
-
-    void Start()
-    {
-        triggerAnimator = gameObject.GetComponent<Animator>();
-    }
-
-
-    void Update()
-    {
-        
-    }
 
     public void pulledCable()
     {

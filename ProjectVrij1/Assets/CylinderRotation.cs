@@ -44,11 +44,12 @@ public class CylinderRotation : MonoBehaviour
             if (transform.localEulerAngles.x > newMaxRotation + 0.5f) 
             {
                 checkRotation();
+                Debug.Log(newMaxRotation);
                 transform.Rotate(new Vector3(0, RotationAdded, 0), Space.Self);
                 yield return new WaitForSeconds(refreshSpeed);
             }
             else
-            {
+            {              
                 StopCoroutine(currentRoutine);
                 yield return new WaitForSeconds(0);
             }
@@ -57,9 +58,9 @@ public class CylinderRotation : MonoBehaviour
 
     public void checkRotation()
     {
-        if (transform.localEulerAngles.y > 360)
+        if (transform.localEulerAngles.x > newMaxRotation)
         {
-            newMaxRotation = 0;
+            newMaxRotation += 20;
         }
     }
 }
