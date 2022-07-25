@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClickMusicButtons : MonoBehaviour
 {
     [SerializeField] private AudioSource sound;
-    [SerializeField] private CheckAnswer checker;
+    [SerializeField] private CheckEasyAnswer checker;
 
     void Start()
     {
