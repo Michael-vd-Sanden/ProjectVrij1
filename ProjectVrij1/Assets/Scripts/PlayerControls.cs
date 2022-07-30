@@ -37,6 +37,18 @@ public class PlayerControls : MonoBehaviour
                 {
                     rotation.currentRoutine = StartCoroutine(rotation.RotateCylinder(20f, 0.09f, 5f));
                 }
+
+                HeadCollectable head = hit.collider.GetComponent<HeadCollectable>();
+                if (head != null)
+                {
+                    head.pickUpHead();
+                }
+
+                StatueComplete statue = hit.collider.GetComponent<StatueComplete>();
+                if (statue != null)
+                {
+                    statue.giveHead();
+                }
             }
         }
     }

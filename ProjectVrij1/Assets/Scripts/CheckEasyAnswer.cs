@@ -9,7 +9,8 @@ public class CheckEasyAnswer : MonoBehaviour
     private bool note3 = false;
     private bool note4 = false;
 
-    public ParticleSystem particles;
+    [SerializeField] private GameObject lockAsset;
+    [SerializeField] private Animator openChest;
 
 
     public void NotePlayed(string note)
@@ -32,7 +33,8 @@ public class CheckEasyAnswer : MonoBehaviour
                 { 
                     note4 = true;
                     Debug.Log("YOU DID IT");
-                    particles.Play();
+                    lockAsset.SetActive(false);
+                    openChest.SetTrigger("OpenChest");
                     SetAllToFalse();
                 }
                 else { SetAllToFalse(); };
