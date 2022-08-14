@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    [SerializeField] SceneSelect scenes;
     public Camera cam;
 
     void Start()
@@ -49,7 +50,24 @@ public class PlayerControls : MonoBehaviour
                 {
                     statue.giveHead();
                 }
+
+                VoiceLines voice = hit.collider.GetComponent<VoiceLines>();
+                {
+                    if (voice != null)
+                    {
+                        voice.PlaySound();
+                    }
+                }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "End")
+        {
+            scenes.loadStartScene();
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
