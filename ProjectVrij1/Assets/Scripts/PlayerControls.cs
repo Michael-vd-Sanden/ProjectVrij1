@@ -7,6 +7,9 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] SceneSelect scenes;
     public Camera cam;
 
+    [SerializeField] GameObject flashlight;
+    private bool flashIsOn = false;
+
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
@@ -59,6 +62,12 @@ public class PlayerControls : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            flashIsOn = !flashIsOn;
+            flashlight.SetActive(flashIsOn);
         }
     }
 
